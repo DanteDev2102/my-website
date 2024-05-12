@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: ${PROJECT_NAME}
+    command: ${COMMAND_START}
+    build: .
+    ports:
+      - ${ASTRO_PORT}:4321
+    volumes:
+      - ./:/app
+      - astro_node_modules:/app/node_modules
+
+volumes:
+  astro_node_modules:
